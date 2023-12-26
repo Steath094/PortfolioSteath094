@@ -1,0 +1,344 @@
+/* css reset  */
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --primary-color: rgb(10, 10, 41);
+    --secondary-color: #6E07F3;
+    --light-color: cyan;
+}
+.center{
+    text-align: center;
+}
+
+/* Navigation bar  */
+
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+
+}
+#navbar::before{
+    content: "";
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    opacity: 0.9;
+}
+#logo img{
+    height: 90px;
+}
+.navbarleft{
+    margin-left: 20px;
+}
+.navbarright{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin-right: 45px;
+}
+
+
+/* navigation styling  */
+#navbar ul{
+    display: flex;
+    float: right;
+}
+#navbar ul li {
+    list-style: none;
+    font-size: 1.4rem;
+
+
+}
+#navbar ul li a{
+    color: #bfda81;
+    display: block;
+    padding: 2px 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    display: block;
+    padding: 6px 20px;
+    text-decoration: none;
+    color: white;
+    border-top: 4px solid aqua;
+    
+}
+#navbar ul li a:active{
+    display: block;
+    padding: 6px 20px;
+    text-decoration: none;
+    color: black;
+    border-top: 6px solid salmon;
+    
+}
+
+/* home section  */
+
+#home{
+    display: flex;
+    align-items:center;
+    justify-content: end;
+    height: 520px;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    margin-bottom: 40px;
+}
+.heading{
+    font-family: "eurostile", sans-serif;
+    font-size: 3.2rem;
+
+}
+.subheading{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: white;
+
+}
+.homecoderimage img{
+    height: 210px;
+    margin-top: 50px;
+}
+
+/* skills section  */
+
+#skills{
+    /* background-color: #6E07F3; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    height: 475px;
+}
+
+
+#skills .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding-left: 42px;
+    padding-right: 42px;
+    /* width: 22%;
+    height: 30vh; */
+    border-radius: 25px;
+    margin: 10px;
+    
+}
+#skills .box img{
+    height: 140px;
+    margin-right: 20px;
+}
+#skillhead{
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+/* about section  */
+
+#about{
+    background-color: #6E07F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 415px;
+    margin-bottom: 40px;
+}
+
+.heading2{
+    font-family: "eurostile", sans-serif;
+    font-size: 2.2rem;
+    margin: 15px;
+    color: white;
+
+}
+.subheading2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.25rem;
+    width: 50%;
+    color: white;
+}
+
+
+/* Academics section  */
+#academicshead{
+    margin: 70px 0px 40px 0px;
+}
+
+#academics{
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+    width: 100%;
+}
+#academics .academicdetail{
+    height: 100%;
+    font-size: 0;
+    transition: 0.8s;
+    display: -webkit-inline-box;
+}
+/* fixed sliding */
+.slideId{
+    position: fixed ;
+}
+/* sliding buttons  */
+#academics .prevnext{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 100%;
+    height: 0;
+}
+#academics .prevnext> div+div {
+    visibility: hidden;
+}
+
+#academics .prevnext a{
+    background: grey;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: 0.3s;
+    transform: translateY(-50%);
+    left: 10px;
+}
+#academics .prevnext a:hover{
+    opacity: 1;
+}
+#academics .prevnext a+a{
+    left: auto;
+    right: 10px;
+}
+
+/* label button designing  */
+#academics .bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+#academics .bullets> a {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,1);
+    text-align: center;
+    transition: 0.3s;
+    text-decoration: none;
+    
+}
+#academics .bullets> a+a {
+    background-color: rgba(255,255,255,0.5);
+}
+#academics .bullets> a:hover {
+    background-color: rgba(255,255,255,0.7);
+}
+
+/* Navigation label button working */
+/* for all */
+#academics>s:target ~ .bullets>*{
+    background: rgba(255,255,255,0.5);
+}
+/* for active */
+#s1:target ~ .bullets>*:nth-child(1){
+    background: rgba(255,255,255,1);
+}
+#s2:target ~ .bullets>*:nth-child(2){
+    background: rgba(255,255,255,1);
+}
+#s3:target ~ .bullets>*:nth-child(3){
+    background: rgba(255,255,255,1);
+}
+/* Navigation sliding button working */
+/* for all */
+#academics>s:target ~ .prevnext{
+    visibility: hidden;
+}
+/* for active  */
+#s1:target ~ .prevnext>*:nth-child(1){
+    visibility: visible;
+}
+#s2:target ~ .prevnext>*:nth-child(2){
+    visibility: visible;
+}
+#s3:target ~ .prevnext>*:nth-child(3){
+    visibility: visible;
+}
+
+/* navigation for sliding  */
+#s1:target ~ .academicdetail{
+    transform: translateX(0%);
+}
+#s2:target ~ .academicdetail{
+    transform: translateX(-100%);
+}
+#s3:target ~ .academicdetail{
+    transform: translateX(-200%);
+}
+.info{
+    background-color: var(--secondary-color);
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.info .left{
+    background-color: white;
+    width: 27%;
+    height: 375px;
+    margin: 50px;
+    padding: 30px 10px;
+}
+.info .left img{
+    height: 100%;
+    width: 100%;
+}
+
+.info .right{
+    width: 50%;
+}
+
+/* Hobbies */
+/* certification head */
+#certificationhead{
+    margin-top: 70px;
+    margin-bottom: 110px;
+}
+.certificationistitem{
+    margin-top: -50px;
+    padding: 10px;
+}
+.certificationistitem img{
+    height: 60%;
+    width: 100%;
+}
+.heading3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.8rem;
+}
+.certification-heading{
+    font-family: 'Rubik Doodle Shadow',Arial, Helvetica, sans-serif;
+}
+#certification{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+    height: 375px;
+}
