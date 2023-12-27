@@ -339,6 +339,58 @@
 }
 #certification{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     height: 375px;
 }
+/* footer  */
+#footer{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    flex-grow: 1;
+}
+#topbox{
+    display: flex;
+    background-color: var(--primary-color);
+    height: 30%;
+    width: 85%;
+    justify-content: center;
+    margin: -2rem;
+    border-radius: 15px;
+}
+.topboxitem{
+    color: white;
+    overflow: hidden;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.75rem;
+    
+}
+.btn{
+    position: relative;
+    height: 90%;
+    width: 90%;
+    background-color: transparent;
+    border: 2px solid var(--light-color);
+    border-radius: 35px;
+    color: wheat;
+    font-size: 1.8rem;
+}
+.btn:hover{
+    background-color: var(--light-color);
+    border: 2px solid var(--primary-color);
+    color: black;
+}
+#lowerbox{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+ }
+ .lowerboxitem{
+    width: 65%;
+ }
